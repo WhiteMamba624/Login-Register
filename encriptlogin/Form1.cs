@@ -31,7 +31,8 @@ namespace encriptlogin
             verificare();
             User user = new User();
             user.setId(txtEmail.Text);
-            user.setParola(encrypt(txtPassword.Text));
+            var password = encrypt(txtEmail.Text) + encrypt(txtPassword.Text);
+            user.setParola(password);
             UserDAO.login(user);
             txtEmail.Clear();
             txtPassword.Clear();
@@ -43,7 +44,8 @@ namespace encriptlogin
             verificare();
             User user = new User();
             user.setId(txtEmail.Text);
-            user.setParola(encrypt(txtPassword.Text));
+            var password = encrypt(txtEmail.Text) + encrypt(txtPassword.Text);
+            user.setParola(password);
             UserDAO.register(user);
             txtEmail.Clear();
             txtPassword.Clear();
